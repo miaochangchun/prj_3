@@ -8,6 +8,7 @@ import com.miao.service.TeacherService;
 import com.miao.service.TeacherServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.convention.annotation.*;
 
 import java.util.Map;
 
@@ -45,6 +46,9 @@ public class LoginAction extends ActionSupport{
         this.role = role;
     }
 
+    @Action(value = "login", results = {@Result(name = "studentSuccess", location="getRandomSubject", type="chain"),
+            @Result(name = "teacherSuccess", location="/teacher/index.html", type="redirect"),
+            @Result(name = "input", location="/login.jsp")})
     public String execute() throws Exception{
         if ("student".equals(role)) {
             if (studentService.allowLogin(id, password)) {

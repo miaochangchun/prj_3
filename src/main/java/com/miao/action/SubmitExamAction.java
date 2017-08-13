@@ -8,6 +8,8 @@ import com.miao.service.SubjectServiceImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Result;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -30,6 +32,7 @@ public class SubmitExamAction extends ActionSupport {
         this.subjectId = subjectId;
     }
 
+    @Action(value = "submitExam", results = {@Result(name = "success", location = "/student/examResult.jsp")})
     public String execute() throws Exception{
         HttpServletRequest request = ServletActionContext.getRequest();
         List<String> studentAnswers = new ArrayList<String>();

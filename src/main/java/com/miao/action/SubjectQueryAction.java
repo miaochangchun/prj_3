@@ -7,6 +7,8 @@ import com.miao.util.Page;
 import com.miao.util.PageResult;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Result;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -27,6 +29,7 @@ public class SubjectQueryAction extends ActionSupport {
     }
 
     @Override
+    @Action(value = "subjectQuery", results = {@Result(name = "success", location = "/teacher/subjectManage.jsp")})
     public String execute() throws Exception {
         Page page = new Page();
         page.setEveryPage(10);

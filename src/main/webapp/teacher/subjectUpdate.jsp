@@ -88,7 +88,7 @@
 			    	                    <tr>
 			    	                	    <td valign="top">答案解析:</td>
 			    	                	    <td>
-			    	                	    	<textarea name="subjectParse" cols="76" rows="10" value="${subject.subjectParse}"></textarea>
+			    	                	    	<textarea name="subjectParse" cols="76" rows="10" value="${subject.subjectParse}">${subject.subjectParse}</textarea>
 			    	                	    </td>
 			    	                    </tr>
 			    	                    <tr>

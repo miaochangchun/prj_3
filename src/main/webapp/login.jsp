@@ -6,19 +6,19 @@
     <link href="css/skin.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <table width="100%" height="166" border="0" cellspacing="0" cellpadding="0">
+    <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
             <td height="42" valigh="top">
                 <table width="100%" hight="42" border="0" cellpadding="0" cellspacing="0" class="login_top_bg">
                     <tr>
                         <td width="1%" height="21">
-                            123&nbsp;
+                            &nbsp;
                         </td>
                         <td  height="42">
-                            456&nbsp;
+                            &nbsp;
                         </td>
                         <td width="17%">
-                            789&nbsp;
+                            &nbsp;
                         </td>
                     </tr>
                 </table>
@@ -89,9 +89,6 @@
                                             </td>
                                             <td width="19%" height="35" >
                                                 <input name="Submit" type="submit" class="button" id="Submit" value="登 录">
-                                            </td>
-                                            <td width="67%" class="top_hui_text">
-                                                <input name="cs" type="button" class="button" id="cs" value="取 消" onClick="showConfirmMsg1()">
                                             </td>
                                         </tr>
                                     </table>

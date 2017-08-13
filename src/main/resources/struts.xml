@@ -5,66 +5,12 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
-    <package name="default" extends="struts-default">
-        <action name="helloworld" class="com.miao.action.HelloWorldAction" method="excute">
-            <result name="success">/index.jsp</result>
-        </action>
-        <action name="login" class="com.miao.action.LoginAction" method="execute">
-            <!--进入考试页面-->
-            <result name="studentSuccess" type="chain">getRandomSubject</result>
-            <!--老师登录成功页面-->
-            <result name="teacherSuccess" type="redirect">/teacher/index.html</result>
-            <!--登录失败页面-->
-            <result name="input">/login.jsp</result>
-        </action>
+    <!-- 请求参数的编码方式-->
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
 
-        <action name="getRandomSubject" class="com.miao.action.GetRandomSubject" method="execute">
-            <result name="success">/student/index.jsp</result>
-        </action>
+    <!-- 当struts.xml改动后，是否重新加载。默认值为false(生产环境下使用),开发阶段最好打开-->
+    <constant name="struts.configuration.xml.reload" value="true"/>
 
-        <action name="submitExam" class="com.miao.action.SubmitExamAction" method="execute">
-            <result name="success">/student/examResult.jsp</result>
-        </action>
-
-        <action name="showSubjectAnswer" class="com.miao.action.ShowSubjectAnswer" method="execute">
-            <result name="success">/student/showAnswer.jsp</result>
-        </action>
-
-        <action name="subjectAdd" class="com.miao.action.SubjectAddAction" method="execute">
-            <result name="success" type="redirect">/teacher/subjectAdd.jsp</result>
-            <result name="input">/teacher/subjectAdd.jsp</result>
-        </action>
-        
-        <action name="subjectQuery" class="com.miao.action.SubjectQueryAction" method="execute">
-            <result name="success">/teacher/subjectManage.jsp</result>
-        </action>
-
-        <action name="subjectParticular" class="com.miao.action.SubjectParticularAction" method="execute">
-            <result name="success">/teacher/subjectShow.jsp</result>
-        </action>
-
-        <action name="subjectUpdateBefore" class="com.miao.action.SubjectUpdateBefore" method="execute">
-            <result name="success">/teacher/subjectUpdate.jsp</result>
-        </action>
-
-        <action name="subjectDelete" class="com.miao.action.SubjectDeleteAction" method="execute">
-            <result name="success">/teacher/subjectManage.jsp</result>
-        </action>
-
-        <action name="subjectUpdate" class="com.miao.action.SubjectUpdateAction" method="execute">
-            <result name="success">/teacher/subjectUpdate.jsp</result>
-        </action>
-
-        <action name="subjectLikeQuery" class="com.miao.action.SubjectLikeQueryAction" method="execute">
-            <result name="success">/teacher/subjectManage.jsp</result>
-        </action>
-
-        <action name="queryStudentByName" class="com.miao.action.QueryStudentByNameAction" method="execute">
-            <result name="success">/teacher/studentManage.jsp</result>
-        </action>
-
-        <action name="queryStudentByClass" class="com.miao.action.QueryStudentByClassAction" method="execute">
-            <result name="success">/teacher/studentManage.jsp</result>
-        </action>
-    </package>
+    <!-- 是否使用struts的开发模式。开发模式会有更多的调试信息。默认值为false(生产环境下使用),开发阶段最好打开-->
+    <constant name="struts.devMode" value="true"/>
 </struts>

@@ -5,6 +5,8 @@ import com.miao.service.StudentService;
 import com.miao.service.StudentServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Result;
 
 import java.util.List;
 
@@ -25,6 +27,7 @@ public class QueryStudentByClassAction extends ActionSupport {
     }
 
     @Override
+    @Action(value = "queryStudentByClass", results = {@Result(name = "success", location = "/teacher/studentManage.jsp")})
     public String execute() throws Exception {
         List<Student> students = service.getStudentByClass(sclass);
         ServletActionContext.getRequest().setAttribute("students", students);
