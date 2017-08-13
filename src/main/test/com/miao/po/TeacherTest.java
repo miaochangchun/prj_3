@@ -29,7 +29,7 @@ public class TeacherTest {
     public void test() throws Exception{
         Teacher teacher = new Teacher();
         teacher.setPassword("34085");
-        teacher.setTeacherID("16531");
+        teacher.setTeacherID("teacher2");
         System.out.print(teacher);
 
         transaction = session.beginTransaction();

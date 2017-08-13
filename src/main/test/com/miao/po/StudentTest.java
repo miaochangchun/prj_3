@@ -30,11 +30,11 @@ public class StudentTest {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         Student student = new Student();
-        student.setPassword("12345");
+        student.setPassword("qwert13245");
         student.setResult(66);
         student.setSclass("22");
-        student.setStudentID("8888");
-        student.setStudentName("xiaoming");
+        student.setStudentID("8880");
+        student.setStudentName("changchun");
         System.out.println(student);
 
         session.save(student);

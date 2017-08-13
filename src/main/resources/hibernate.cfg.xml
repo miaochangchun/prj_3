@@ -17,9 +17,13 @@
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hbm2ddl.auto">update</property>
 
-        <!-- 注册我们的实体映射类 -->
-        <mapping resource="com.miao.po/student.hbm.xml" />
-        <mapping resource="com.miao.po/subject.hbm.xml" />
-        <mapping resource="com.miao.po/teacher.hbm.xml" />
+        <!--&lt;!&ndash; 注册我们的实体映射类 &ndash;&gt;-->
+        <!--<mapping resource="com.miao.po/student.hbm.xml" />-->
+        <!--<mapping resource="com.miao.po/subject.hbm.xml" />-->
+        <!--<mapping resource="com.miao.po/teacher.hbm.xml" />-->
+
+        <mapping class="com.miao.po.Student"/>
+        <mapping class="com.miao.po.Subject"/>
+        <mapping class="com.miao.po.Teacher"/>
     </session-factory>
 </hibernate-configuration>

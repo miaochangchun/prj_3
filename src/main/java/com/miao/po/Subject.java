@@ -1,17 +1,30 @@
 package com.miao.po;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
 /**
  * 题目类
  * Created by 10048 on 2017/8/10.
  */
-public class Subject {
+@Entity
+@Table(name = "tb_subject")
+public class Subject implements Serializable{
+    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int subjectID;
+    @Column(name = "subjectTitle", unique = true)
     private String subjectTitle;
+    @Column(name = "subjectOptionA")
     private String subjectOptionA;
+    @Column(name = "subjectOptionB")
     private String subjectOptionB;
+    @Column(name = "subjectOptionC")
     private String subjectOptionC;
+    @Column(name = "subjectOptionD")
     private String subjectOptionD;
+    @Column(name = "subjectAnswer")
     private String subjectAnswer;
+    @Column(name = "subjectParse", nullable = true, columnDefinition = "")
     private String subjectParse;
 
     public int getSubjectID() {

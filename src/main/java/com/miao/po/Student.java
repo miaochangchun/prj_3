@@ -1,14 +1,27 @@
 package com.miao.po;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+import java.io.Serializable;
+
 /**
  * 学生表,保存学生编号，系统密码
  * Created by 10048 on 2017/8/10.
  */
-public class Student {
+@Entity
+@Table(name = "tb_student")
+public class Student implements Serializable{
+    @Id@GeneratedValue(generator = "studentID")
+    @GenericGenerator(name = "studentID", strategy = "assigned")
     private String studentID;
+    @Column(name = "password", nullable = false)
     private String password;
+    @Column(name = "studentName", nullable = false)
     private String studentName;
+    @Column(name = "result", nullable = true, columnDefinition = "")
     private Integer result;
+    @Column(name = "sclass", nullable = false)
     private String sclass;
 
     public String getStudentID() {
